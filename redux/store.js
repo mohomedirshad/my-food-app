@@ -6,20 +6,22 @@ import { persistStore, persistReducer,FLUSH,
     PERSIST,
     PURGE,
     REGISTER } from "redux-persist";
-import foodReducer from "./reducer";
+import foodReducer from "./food/food-reducer";
+import supplierReducer from "./supplier/supplier-reducer";
 
 const persistConfig = {
     key: 'root',
     storage: AsyncStorage,
 }
 
-const persistedReducer = persistReducer(persistConfig, foodReducer);
+const foodPersistedReducer = persistReducer(persistConfig, foodReducer);
+const supplierPersistedReducer = persistReducer(persistConfig, supplierReducer);
 
 // manually clear state
 // AsyncStorage.clear();
 
 export const store = configureStore({
-    reducer: { food: persistedReducer },
+    reducer: { food: foodPersistedReducer, supplier: supplierPersistedReducer },
     middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {

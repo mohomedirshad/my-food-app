@@ -19,7 +19,7 @@ export default function App() {
           <PersistGate loading={<Text>Loading...</Text>} persistor={persistor}>
             <NavigationContainer>
               <Drawer.Navigator initialRouteName='Food' screenOptions={{ headerShown: true }} >
-                <Drawer.Screen name='Food' component={Food} options={{ headerShown: false }} />
+                <Drawer.Screen name='Food Management' component={Food} options={{ headerShown: true }} />
                 <Drawer.Screen name='About' component={About} />
               </Drawer.Navigator>
             </NavigationContainer>

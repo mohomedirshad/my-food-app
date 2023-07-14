@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { addFood, deleteFood } from "../../redux/food-action";
+import { addFood, deleteFood } from "../../redux/food/food-action";
 import { useState } from "react";
 import { Text, View, Button, FlatList, TextInput, SafeAreaView } from "react-native";
 
@@ -41,7 +41,7 @@ function FoodScreen() {
     return (
         <SafeAreaView>
             <View >
-                <Text style={{ fontWeight: "bold", marginBottom: 10, textAlign: "center", fontSize: 18 }}>Food Management</Text>
+                <Text style={{ fontWeight: "bold", marginBottom: 10, textAlign: "center", fontSize: 18, marginTop: 20 }}>Food</Text>
 
                 <FlatList
                     data={foodList}
@@ -50,7 +50,7 @@ function FoodScreen() {
                     renderItem={(item) =>
                         <Item item={item.item} />} />
 
-                <TextInput value={food} onChange={onChangeText} style={{ color: "black", height: 30, marginHorizontal: 90, marginTop: 20, borderRadius: 8, borderColor: "black", borderStyle: "solid", borderWidth: 2 }} keyboardType="default" keyboardAppearance="light" />
+                <TextInput placeholder="Please enter the food!" value={food} onChange={onChangeText} style={{ color: "black", height: 40, textAlign: "center", marginHorizontal: 90, marginTop: 20, borderRadius: 8, borderColor: "black", borderStyle: "solid", borderWidth: 2 }} keyboardType="default" keyboardAppearance="light" />
 
                 <Button title="Add" onPress={handleAddFood} />
             </View>

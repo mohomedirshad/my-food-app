@@ -15,7 +15,7 @@ const foodReducer = (state = initialState, action) => {
             };
         }
         case DELETE_FOOD: {            
-            return {                
+            return {                 
                 foods: [
                     ...state.foods.filter(food => food.id !== action.payload)
                 ]

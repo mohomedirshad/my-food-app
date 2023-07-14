@@ -30,8 +30,8 @@ function Food() {
             }
         })}
         >
-            <Tabs.Screen name="FoodScreen" component={FoodScreen} options={{headerTitle: "Food"}} />
-            <Tabs.Screen name="Supplier" component={Supplier} />
+            <Tabs.Screen name="FoodScreen" component={FoodScreen} options={{ title: "Food", headerShown: false }} />
+            <Tabs.Screen name="Supplier" component={Supplier} options={{ headerShown: false }} />
 
         </Tabs.Navigator>
     )
